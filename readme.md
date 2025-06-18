@@ -45,13 +45,13 @@ Docker version 24.0.2, build cb74dfc
 Use the following command to build and run all services:
 
 ```bash
-docker-compose up --build
+docker compose up --build
 ```
 
-To run in the background (detached mode):
+Or To run in the background (detached mode):
 
 ```bash
-docker-compose up -d --build
+docker compose up -d --build
 ```
 
 This will:
