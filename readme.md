@@ -133,7 +133,7 @@ axios.post('http://localhost:5000/login', {
 }).catch(error => {
   console.error('Login failed:', error.response.data);
 });
-
+```
 ---
 
 ## 🗄️ Database Admin Panel
