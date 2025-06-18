@@ -1,7 +1,7 @@
 
-# 🧠 AI Agent SaaS — Backend Setup
+# 🧠 Simple Login/Register — Backend Setup
 
-This is the backend service for the AI Agent SaaS application. It handles user authentication, bot registration, and connects to a PostgreSQL database — all managed using Docker and Docker Compose.
+This is the backend service for the Simple Login/Register. It handles user authentication, and protected connects to a PostgreSQL database — all managed using Docker and Docker Compose.
 
 ---
 
@@ -111,6 +111,28 @@ _No body required._
 
 **GET** `/dashboard`  
 Returns user-specific dashboard data. May require authentication.
+
+---
+
+## 🔐 Using Axios with Session-based Authentication
+
+Since this project uses **session-based login**, you must include `withCredentials: true` in your frontend HTTP requests. This ensures cookies (containing the session ID) are sent and received properly.
+
+### ✅ Example: Axios Login Request
+
+```js
+import axios from 'axios';
+
+axios.post('http://localhost:5000/login', {
+  email: 'c@foo.bar',
+  password: '12345'
+}, {
+  withCredentials: true // ⚠️ required for session to work
+}).then(response => {
+  console.log('Login successful:', response.data);
+}).catch(error => {
+  console.error('Login failed:', error.response.data);
+});
 
 ---
 
